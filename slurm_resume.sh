@@ -56,7 +56,7 @@ do
   declare -i stat_count;
   until [[ $node_status == "ACTIVE" || $stat_count -ge 20 ]]; do
     node_state=$(openstack server show $host 2>&1);
-    node_status=$(echo -e "${node_state}" | awk '/status/ {print $4}');
+    node_status=$(echo -e "${node_state}" | awk '/ status/ {print $4}');  #Add space before status to prevent catching host_status property instead of actual status
 #    echo "$host status is: $node_status" >> $log_loc;
 #    echo "$host ip is: $node_ip" >> $log_loc;
     stat_count+=1
