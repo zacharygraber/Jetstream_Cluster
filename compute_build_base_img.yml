@@ -48,10 +48,6 @@
       groups: "compute-base"
       ansible_host: "{{ os_host['server']['hostname'] }}"
 
-  - name: pause for ssh to come up
-    pause:
-      seconds: 90
-
 
 - hosts: compute-base
 
@@ -74,6 +70,11 @@
       - "Lmod"
 
   tasks:
+
+  - name: Wait for SSH to come up
+    ansible.builtin.wait_for_connection:
+      sleep: 5
+      timeout: 90
 
   - name: Get the headnode private IP
     local_action:
