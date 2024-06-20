@@ -71,7 +71,7 @@ dnf -y --allowerasing install \
         bind-utils \
  	python3-pexpect
 
-pip3 install ansible
+pip3 install ansible-core<2.17
 mkdir -p /etc/ansible
 ln -s /usr/local/bin/ansible-playbook /usr/bin/ansible-playbook
 
