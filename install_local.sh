@@ -80,6 +80,7 @@ sudo pip3 install python-openstackclient==6.5.0
 
 ln -s /usr/local/bin/ansible-galaxy /usr/bin/ansible-galaxy
 ansible-galaxy collection install 'openstack.cloud:==2.2.0'
+ansible-galaxy collection install 'ansible.posix'
 
 dnf -y update  # until the base python2-openstackclient install works out of the box!
 
