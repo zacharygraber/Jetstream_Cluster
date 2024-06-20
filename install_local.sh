@@ -78,6 +78,9 @@ ln -s /usr/local/bin/ansible-playbook /usr/bin/ansible-playbook
 sudo pip3 install openstacksdk==2.1.0
 sudo pip3 install python-openstackclient==6.5.0
 
+ln -s /usr/local/bin/ansible-galaxy /usr/bin/ansible-galaxy
+ansible-galaxy collection install openstack.cloud,2.2.0
+
 dnf -y update  # until the base python2-openstackclient install works out of the box!
 
 #create user that can be used to submit jobs
